@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+
+<title>Payment - UNIQUE ASTRO</title>
+
+<link rel="stylesheet" href="style.css">
+
+</head>
+
+
+<body>
+
+
+<h1>Complete Payment</h1>
+
+
+<div class="payment-box">
+
+
+<h2>Buy Tokens</h2>
+
+
+<p>
+Tokens:
+<span id="token"></span>
+</p>
+
+
+<p>
+Amount:
+₹<span id="price"></span>
+</p>
+
+
+<img "
+src="qrcode.jpg"
+width="250"
+>
+
+
+<h3>UPI ID</h3>
+
+<p>
+9462622426@axl
+</p>
+
+
+<form
+id="paymentForm"
+action="https://formspree.io/f/mzdlryvw"
+method="POST">
+
+
+<input 
+type="text"
+name="name"
+placeholder="Your Name"
+required>
+
+
+<input 
+type="tel"
+name="phone"
+placeholder="Mobile Number"
+required>
+
+
+
+
+
+<input 
+type="hidden"
+name="tokens"
+id="formTokens">
+
+
+<input 
+type="hidden"
+name="amount"
+id="formAmount">
+
+<input type="hidden" name="email" id="userEmail">
+<input type="hidden" name="plan" id="planName">
+
+
+
+
+</form>
+
+
+
+</div>
+
+
+
+<script>
+
+
+let token =
+localStorage.getItem("tokens");
+
+
+let price =
+localStorage.getItem("price");
+
+
+document.getElementById("token").innerHTML=token;
+
+document.getElementById("price").innerHTML=price;
+
+
+document.getElementById("formTokens").value=token;
+
+document.getElementById("formAmount").value=price;
+
+
+</script>
+
+<button type="submit" form="paymentForm">
+Continue
+</button>
+
+<script>
+
+function paymentDone(){
+
+window.location.href="success.html";
+
+}
+
+</script>
+
+<script type="module">
+
+import { initializeApp } from "https://www.gstatic.com/firebasejs/10.12.2/firebase-app.js";
+
+import {
+getFirestore,
+collection,
+addDoc
+} from "https://www.gstatic.com/firebasejs/10.12.2/firebase-firestore.js";
+
+const firebaseConfig={
+apiKey:"AIzaSyB26iL7yascJvQXRKdkI5mqf5J1gazVuMg",
+authDomain:"unique-astro.firebaseapp.com",
+projectId:"unique-astro",
+storageBucket:"unique-astro.firebasestorage.app",
+messagingSenderId:"570060771424",
+appId:"1:570060771424:web:1ca759ef4a1345fa1ab305"
+};
+
+const app=initializeApp(firebaseConfig);
+const db=getFirestore(app);
+
+document.getElementById("paymentForm").addEventListener("submit",async()=>{
+
+await addDoc(collection(db,"paymentRequests"),{
+
+name:document.querySelector("[name=name]").value,
+phone:document.querySelector("[name=phone]").value,
+tokens:localStorage.getItem("tokens"),
+amount:localStorage.getItem("price"),
+status:"pending",
+createdAt:new Date()
+
+});
+
+setTimeout(()=>{
+
+window.location.href="success.html";
+
+},500);
+
+});
+
+</script>
+</body>
+
+</html>
+

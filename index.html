@@ -1,0 +1,627 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>UNIQUE ASTRO</title>
+
+<link rel="stylesheet" href="style.css">
+
+<link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700;800&display=swap" rel="stylesheet">
+
+<link rel="stylesheet"
+href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+
+</head>
+
+<body>
+
+<!-- SPACE -->
+
+<div class="space">
+
+<div class="stars"></div>
+
+<div class="planet planet1"></div>
+
+<div class="planet planet2"></div>
+
+<div class="planet planet3"></div>
+
+<div class="orbit orbit1"></div>
+
+<div class="orbit orbit2"></div>
+
+<div class="orbit orbit3"></div>
+
+</div>
+
+<!-- HEADER -->
+
+<header>
+
+<div class="logo">
+
+<h1>UNIQUE ASTRO</h1>
+
+</div>
+
+<div class="menu-btn" id="menuBtn">
+
+<span></span>
+
+<span></span>
+
+<span></span>
+
+</div>
+
+</header>
+
+<!-- SIDEBAR -->
+
+<nav class="sidebar" id="sidebar">
+
+<div class="close-btn" id="closeBtn">
+
+<i class="fa-solid fa-xmark"></i>
+
+</div>
+
+<ul>
+
+<li>
+
+<a href="login.html">
+
+<i class="fa-solid fa-right-to-bracket"></i>
+
+Login
+
+</a>
+
+</li>
+
+<li>
+
+<a href="signup.html">
+
+<i class="fa-solid fa-user-plus"></i>
+
+Sign Up
+
+</a>
+
+</li>
+
+<li>
+
+<a href="dashboard.html">
+
+<i class="fa-solid fa-user"></i>
+
+My Account
+
+</a>
+
+</li>
+
+<li>
+
+<a href="tokens.html">
+
+<i class="fa-solid fa-coins"></i>
+
+Buy Tokens
+
+</a>
+
+</li>
+
+<li>
+
+<a href="#feedback">
+
+<i class="fa-solid fa-star"></i>
+
+Feedback
+
+</a>
+
+</li>
+
+<li>
+
+<a href="tel:+917850910953">
+
+<i class="fa-solid fa-headset"></i>
+
+Support
+
+</a>
+
+</li>
+
+</ul>
+
+</nav>
+
+<!-- HERO -->
+
+<section class="hero">
+
+<div class="hero-content">
+
+<h2>Welcome To</h2>
+
+<h1>UNIQUE ASTRO</h1>
+
+<p>
+
+Unlock the mysteries of your life through
+Vedic Astrology.
+
+Consult our experienced astrologer and
+receive accurate predictions.
+
+</p>
+
+<a href="#birthSection" class="btn">
+
+Get Started
+
+</a>
+
+</div>
+
+</section>
+
+<!-- ===========================
+ASTROLOGER PROFILE
+=========================== -->
+
+<section class="profile-section">
+
+<img src="aacharyabhupendra.jpg"
+class="profile-img"
+alt="Acharya Bhupendra Sharma">
+
+<h2>Acharya Bhupendra Sharma</h2>
+
+<ul>
+
+<li>
+<strong>Experience :</strong>
+11+ Years
+</li>
+
+<li>
+<strong>Education :</strong>
+Masters & Bachelors from Central Sanskrit University, Jaipur
+</li>
+
+<li>
+<strong>Worked At :</strong>
+AstroTalk • GaneshaSpeaks • InstaAstro
+</li>
+
+<li>
+<strong>Specialization :</strong>
+Love, Marriage, Career, Business,
+Health & Kundli Analysis
+</li>
+
+</ul>
+
+</section>
+
+<!-- ===========================
+BIRTH DETAILS
+=========================== -->
+
+<section
+class="birth-section"
+id="birthSection">
+
+<div class="birth-card">
+
+<h2>Birth Details</h2>
+
+<form
+id="birthDetailsForm"
+action="https://formspree.io/f/mzdlryvw"
+method="POST">
+
+<div class="input-box">
+
+<input
+type="text"
+name="name"
+placeholder="Full Name"
+required>
+
+</div>
+
+<div class="input-box">
+
+<input
+type="email"
+name="email"
+placeholder="Email Address"
+required>
+
+</div>
+
+<div class="input-box">
+
+<input
+type="tel"
+name="mobile"
+placeholder="Mobile Number"
+required>
+
+</div>
+
+<div class="input-box">
+
+<select
+name="gender"
+required>
+
+<option value="">
+Select Gender
+</option>
+
+<option>
+Male
+</option>
+
+<option>
+Female
+</option>
+
+</select>
+
+</div>
+
+<div class="input-box">
+
+<input
+type="date"
+name="dob"
+required>
+
+</div>
+
+<div class="input-box">
+
+<input
+type="time"
+name="birth_time"
+required>
+
+</div>
+
+<div class="input-box">
+
+<input
+type="text"
+name="birth_place"
+placeholder="Birth Place"
+required>
+
+</div>
+
+<button
+type="submit"
+class="continue-btn">
+
+Continue
+
+</button>
+
+</form>
+
+<div class="important-note">
+
+<h3>
+📢 Important Notice
+</h3>
+
+<p>
+
+Please submit your Birth Details first.
+
+After successful submission,
+click on Call Now.
+
+</p>
+
+</div>
+
+<button
+id="callNowBtn"
+class="continue-btn">
+
+Call Now
+
+</button>
+
+<p class="token-info">
+
+🪙 Consultation Charge :
+12 Tokens / Minute
+
+</p>
+
+</div>
+
+</section>
+
+<!-- ===========================
+SPECIAL OFFER
+=========================== -->
+
+<section class="offer-box">
+
+<h2>🎁 Welcome Offer</h2>
+
+<p>
+
+New users get
+
+<strong>20 FREE Tokens</strong>
+
+after first successful payment.
+
+</p>
+
+<p class="limited">
+
+⏳ Limited Time Offer
+
+</p>
+
+</section>
+
+<!-- ===========================
+ABOUT UNIQUE ASTRO
+=========================== -->
+
+<section class="about-section">
+
+<h2>🌟 About UNIQUE ASTRO</h2>
+
+<p>
+
+UNIQUE ASTRO is a premium Vedic Astrology platform.
+
+We provide accurate guidance for:
+
+✔ Love
+
+✔ Marriage
+
+✔ Career
+
+✔ Business
+
+✔ Health
+
+✔ Education
+
+✔ Kundli Analysis
+
+✔ Life Problems
+
+using authentic Vedic Astrology.
+
+</p>
+
+<div class="developer">
+
+<h3>Founder & Developer</h3>
+
+<h2>Bhavesh Jangid</h2>
+
+<p>
+
+Made with ❤️ in India
+
+</p>
+
+</div>
+
+</section>
+
+<!-- ===========================
+FEEDBACK
+=========================== -->
+
+<section
+class="feedback-section"
+id="feedback">
+
+<h2>
+
+⭐ Customer Feedback
+
+</h2>
+
+<form id="feedbackForm">
+
+<input
+type="text"
+id="fbName"
+placeholder="Your Name"
+required>
+
+<textarea
+id="fbMessage"
+placeholder="Write your feedback..."
+required>
+
+</textarea>
+
+<select id="fbRating">
+
+<option>⭐⭐⭐⭐⭐</option>
+
+<option>⭐⭐⭐⭐</option>
+
+<option>⭐⭐⭐</option>
+
+<option>⭐⭐</option>
+
+<option>⭐</option>
+
+</select>
+
+<button type="submit">
+
+Submit Feedback
+
+</button>
+
+</form>
+
+</section>
+
+<!-- Live Feedback -->
+
+<section>
+
+<h2 style="text-align:center;">
+
+Latest Reviews
+
+</h2>
+
+<div class="review-slider">
+
+<div id="feedbackList">
+
+</div>
+
+</div>
+
+</section>
+
+<!-- ===========================
+SUPPORT SECTION
+=========================== -->
+
+<section class="enquiry-box">
+
+<h3>📞 Enquiry & Support</h3>
+
+<p>
+
+For any enquiry, payment issue or consultation support,
+contact our team.
+
+</p>
+
+<a href="tel:+917850910953" class="support-number">
+
++91 78509 10953
+
+</a>
+
+</section>
+
+<!-- ===========================
+PAYMENT NOTICE
+=========================== -->
+
+<section class="payment-note">
+
+<h3>💳 Payment Information</h3>
+
+<p>
+
+After successful payment,
+your consultation tokens will be updated automatically.
+
+</p>
+
+<p>
+
+If automatic update fails,
+our support team will verify your payment and update your
+tokens within a few minutes.
+
+</p>
+
+<p style="color:#d32f2f;">
+
+Please do not refresh or close the payment page
+until payment is completed.
+
+</p>
+
+</section>
+
+<!-- ===========================
+FOOTER
+=========================== -->
+
+<footer>
+
+<p>
+
+© 2026 UNIQUE ASTRO
+
+</p>
+
+<p>
+
+Founder & Developer
+
+<br>
+
+<b>Bhavesh Jangid</b>
+
+</p>
+
+</footer>
+
+<!-- ===========================
+FIREBASE
+=========================== -->
+
+<script type="module" src="firebase.js"></script>
+
+<!-- ===========================
+MAIN SCRIPT
+=========================== -->
+
+<script src="script.js"></script>
+
+</body>
+
+</html>
+
+<!-- ===========================
+LATEST REVIEWS
+=========================== -->
+
+<section class="reviews-section">
+
+<h2>⭐ Customer Reviews</h2>
+
+<div id="feedbackContainer">
+
+<div id="feedbackList">
+  
+
+
+<!-- Firebase Reviews Automatically Show Here -->
+
+</div>
+
+</div>
+
+</section>

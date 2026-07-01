@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Dashboard | UNIQUE ASTRO</title>
+
+<link rel="stylesheet" href="style.css">
+
+<link rel="stylesheet"
+href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+
+</head>
+
+<body>
+
+<header>
+
+<h1>UNIQUE ASTRO</h1>
+
+</header>
+
+<section class="dashboard">
+
+<div class="dashboard-card">
+
+<img src="IMG_20260626_171956.jpg"
+class="profile-img">
+
+<h2 id="userName">Loading...</h2>
+
+<p id="userEmail"></p>
+
+<p id="userMobile"></p>
+
+<hr>
+
+<h3>🪙 Available Tokens</h3>
+
+<h1 id="userTokens">20</h1>
+
+<a href="tokens.html">
+
+<button>
+
+Buy Tokens
+
+</button>
+
+</a>
+
+<a href="chat.html">
+
+<button>
+
+Start Consultation
+
+</button>
+
+</a>
+
+<button id="logoutBtn">
+
+Logout
+
+</button>
+
+</div>
+
+</section>
+
+<script type="module">
+
+import { initializeApp } from "https://www.gstatic.com/firebasejs/10.12.2/firebase-app.js";
+
+import {
+
+getAuth,
+
+onAuthStateChanged,
+
+signOut
+
+} from "https://www.gstatic.com/firebasejs/10.12.2/firebase-auth.js";
+
+import {
+
+getFirestore,
+
+doc,
+
+getDoc
+
+} from "https://www.gstatic.com/firebasejs/10.12.2/firebase-firestore.js";
+
+const firebaseConfig={
+
+apiKey:"AIzaSyB26iL7yascJvQXRKdkI5mqf5J1gazVuMg",
+
+authDomain:"unique-astro.firebaseapp.com",
+
+projectId:"unique-astro",
+
+storageBucket:"unique-astro.firebasestorage.app",
+
+messagingSenderId:"570060771424",
+
+appId:"1:570060771424:web:1ca759ef4a1345fa1ab305"
+
+};
+
+const app=initializeApp(firebaseConfig);
+
+const auth=getAuth(app);
+
+const db=getFirestore(app);
+
+onAuthStateChanged(auth,async(user)=>{
+
+if(user){
+
+const snap=await getDoc(doc(db,"users",user.uid));
+
+if(snap.exists()){
+
+const data=snap.data();
+
+document.getElementById("userName").innerHTML=data.name;
+
+document.getElementById("userEmail").innerHTML="📧 "+data.email;
+
+document.getElementById("userMobile").innerHTML="📱 "+data.mobile;
+
+document.getElementById("userTokens").innerHTML=data.tokens;
+
+}
+
+}else{
+
+window.location.href="login.html";
+
+}
+
+});
+
+document.getElementById("logoutBtn")
+
+.onclick=()=>{
+
+signOut(auth);
+
+};
+
+</script>
+
+</body>
+
+</html>
